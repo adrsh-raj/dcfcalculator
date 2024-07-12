@@ -129,7 +129,7 @@ def main():
                     my_bar.progress(percent_complete + 1, text=progress_text)
                 time.sleep(1)
                 my_bar.empty()
-                st.success(f"The possible valie range is {fair}")
+                st.success(f"The possible value range is {fair}")
 
             except:
                 st.warning("Not applicable")
