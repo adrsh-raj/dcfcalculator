@@ -1,5 +1,5 @@
 import streamlit as st
-from colorama import Fore
+# from colorama import Fore
 
 def FvCalculator(amount_future, opration_future, future_year):
     try:
