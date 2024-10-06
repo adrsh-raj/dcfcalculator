@@ -1,6 +1,6 @@
 import streamlit as st
 from cash_functions import *
-import  page3
+import page1, page2, page3
 st.set_page_config(page_title="Value Calculator ", layout="wide")
 
 ##future_State 1 sessoion
