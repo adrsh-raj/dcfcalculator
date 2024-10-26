@@ -65,7 +65,7 @@ def Nv():
             formula = amount[i]/((1+ percentage)**(i+1))
             amount_list.append(formula)
             d[(new_list[i])] = amount_list[i]
-        print(Fore.CYAN +"{future value : current value }"+ str(d))
+        print("{future value : current value }"+ str(d))
         pvvaluelist = list(d.values())
         sumofvalues = sum(pvvaluelist)
         st.session_state.sumofvalues = sumofvalues
