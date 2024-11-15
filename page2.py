@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import yfinance as yf
+from datetime import datetime as dt
+import pytz
 
 # Define the Correction class
 class Correction:
@@ -17,7 +19,11 @@ class Correction:
 
 
     def get_ready_data(self):
-        data = yf.download(self.symbol)
+        tz = pytz.timezone("Asia/Kolkata")
+        start = tz.localize(dt(2013,1,1))
+        end = tz.localize(dt.today())
+            
+        data = yf.download(self.symbol, auto_adjust=True)
         data = pd.DataFrame(data)
         data = data.drop(columns=['Open', 'High', 'Low', 'Volume', 'Adj Close'])
         data['sma_s'] = data['Close'].rolling(self.sma_s).mean()
