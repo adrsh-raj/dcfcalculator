@@ -1,6 +1,6 @@
 numpy==1.26.0
 
-
+pytz
 
 pandas==2.2.3
 
