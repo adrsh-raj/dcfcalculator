@@ -119,7 +119,7 @@ def main():
 
     # Display a subset of the data
     st.write("Stock data for:", symbol)
-    st.dataframe(correction.result.head(10))  # Display the first 10 rows
+    st.dataframe(correction.result.tail(10))  # Display the first 10 rows
 
     # Date range for plotting
     start_date = st.sidebar.date_input("Start Date", value=pd.to_datetime("2020-01-01"))
