@@ -28,7 +28,7 @@ class Correction:
         data['rs'] = data['avg_gain'].div(data['avg_loss'])
         data['rsi'] = 100 - (100 / (1 + data['rs']))
         data.dropna(inplace=True)
-        data['percent_k'] = ((data['Close'] - data['Close'].rolling(14).min()).div(data['Close'].rolling(14).max() - data['Close'].rolling(14).min())) * 100
+        data['percent_k'] = ((data['rsi'] - data['rsi'].rolling(14).min()).div(data['rsi'].rolling(14).max() - data['rsi'].rolling(14).min())) * 100
         data['percent_d'] = data['percent_k'].rolling(3).mean()
 
         # Define conditions for strategy_result
