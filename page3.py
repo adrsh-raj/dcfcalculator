@@ -126,7 +126,7 @@ def main():
     end_date = st.sidebar.date_input("End Date", value=pd.to_datetime("2023-01-01"))
 
     # Columns to plot
-    columns_to_plot = st.sidebar.multiselect("Columns to plot", options=correction.result.columns.tolist(), default=['Close', 'sma_s', 'sma_l'])
+    columns_to_plot = st.sidebar.multiselect("Columns to plot", options=correction.result.columns.tolist(), default=['Close'])
     
     # Plot data and show it in Streamlit
     st.header("Stock Data Visualization")
