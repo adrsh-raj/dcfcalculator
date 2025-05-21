@@ -14,7 +14,7 @@ class Correction:
         self.data = self.get_ready_data()
 
     def get_ready_data(self):
-        data = yf.download(self.symbol, tz="America/New_York")
+        data = yf.download(self.symbol)
         data = pd.DataFrame(data)
         data = data.drop(columns=['Open', 'High', 'Low', 'Volume', 'Adj Close'])
         data['sma_s'] = data['Close'].rolling(self.sma_s).mean()
